@@ -1,40 +1,43 @@
-<div class="container center">
-  <h2>{{title}}</h2>
+<div class="mt-5 container-sm center">
+  <div class="card">
+    <h2 class="mt-2">{{title}}</h2>
 
-  <div class="form-group">
-    <label for="lengthPass">Enter Length</label>
-    <input (input)="onchangeLength($event.target.value)" type="number" class="form-control" id="lengthPass" />
-  </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="lengthPass">Enter Length</label>
+        <input (input)="onchangeLength($event.target.value)" type="number" class="form-control" id="lengthPass" />
+      </div>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-2 col-sm-12 col-lg-2 leftAlign">
-        <div class="form-check">
-          <input (change)="onChangeuseLetters()" class="form-check-input" type="checkbox" value="" id="useLet">
-          <label class="form-check-label" for="useLet">
-            Use Letters
-          </label>
-        </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-3 col-sm-3 col-lg-2 leftAlign">
+            <div class="form-check">
+              <input (change)="onChangeuseLetters()" class="form-check-input" type="checkbox" value="" id="useLet">
+              <label class="form-check-label" for="useLet">
+                Use Letters
+              </label>
+            </div>
 
-        <div class="form-check">
-          <input (change)="onChangeuseNumbers()" class="form-check-input" type="checkbox" value="" id="useNums">
-          <label class="form-check-label" for="useNums">
-            Use Numbers
-          </label>
-        </div>
+            <div class="form-check">
+              <input (change)="onChangeuseNumbers()" class="form-check-input" type="checkbox" value="" id="useNums">
+              <label class="form-check-label" for="useNums">
+                Use Numbers
+              </label>
+            </div>
 
-        <div class="form-check">
-          <input (change)="onChangeuseSymbols()" class="form-check-input" type="checkbox" value="" id="useSyms">
-          <label class="form-check-label" for="useSyms">
-            Use Symbols
-          </label>
+            <div class="form-check">
+              <input (change)="onChangeuseSymbols()" class="form-check-input" type="checkbox" value="" id="useSyms">
+              <label class="form-check-label" for="useSyms">
+                Use Symbols
+              </label>
+            </div>
+          </div>
         </div>
       </div>
+      <button class="btn btn-primary" [disabled]="!(enteredLength && (useLetters || useNumbers || useSymbols))"
+        (click)="onButtonClicked()">Generate</button>
+
+      <h1 class="mt-5 center">{{password}}</h1>
     </div>
   </div>
-  <button class="btn btn-primary" (click)="onButtonClicked()">Generate</button>
-
-  <h1 class="mt-5 center">{{password}}</h1>
-
-
 </div>
