@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "simple-angular": {
+    "passGenerator": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/simple-angular",
+            "outputPath": "dist/passGenerator",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "simple-angular:build"
+            "browserTarget": "passGenerator:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "simple-angular:build:production"
+              "browserTarget": "passGenerator:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simple-angular:build"
+            "browserTarget": "passGenerator:build"
           }
         },
         "test": {
@@ -111,18 +111,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "simple-angular:serve"
+            "devServerTarget": "passGenerator:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "simple-angular:serve:production"
+              "devServerTarget": "passGenerator:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "simple-angular",
+  "defaultProject": "passGenerator",
   "cli": {
     "analytics": false
   }
